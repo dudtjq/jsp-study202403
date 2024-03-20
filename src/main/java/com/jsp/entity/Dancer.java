@@ -5,9 +5,6 @@ import java.util.Objects;
 
 public class Dancer {
 
-    public void setGenres(List<Genre> genres) {
-    }
-
     public enum DanceLevel {
         BEGINNER("초보", 50000),
         AMATEUR("아마추어", 100000),
@@ -49,15 +46,15 @@ public class Dancer {
     private String name; // 댄서 이름
     private String crewName; // 댄서 팀 이름
     private DanceLevel danceLevel; // 댄서 실력 등급
-    private List<Genre> genre; // 댄서의 장르 리스트
+    private List<Genre> genres; // 댄서의 장르 리스트
 
     public Dancer() {}
 
-    public Dancer(String name, String crewName, DanceLevel danceLevel, List<Genre> genre) {
+    public Dancer(String name, String crewName, DanceLevel danceLevel, List<Genre> genres) {
         this.name = name;
         this.crewName = crewName;
         this.danceLevel = danceLevel;
-        this.genre = genre;
+        this.genres = genres;
     }
 
     public String getName() {
@@ -84,12 +81,12 @@ public class Dancer {
         this.danceLevel = danceLevel;
     }
 
-    public List<Genre> getGenre() {
-        return genre;
+    public List<Genre> getGenres() {
+        return genres;
     }
 
-    public void setGenre(List<Genre> genre) {
-        this.genre = genre;
+    public void setGenres(List<Genre> genres) {
+        this.genres = genres;
     }
 
     @Override
@@ -97,12 +94,12 @@ public class Dancer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Dancer dancer = (Dancer) o;
-        return Objects.equals(name, dancer.name) && Objects.equals(crewName, dancer.crewName) && danceLevel == dancer.danceLevel && Objects.equals(genre, dancer.genre);
+        return Objects.equals(name, dancer.name) && Objects.equals(crewName, dancer.crewName) && danceLevel == dancer.danceLevel && Objects.equals(genres, dancer.genres);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, crewName, danceLevel, genre);
+        return Objects.hash(name, crewName, danceLevel, genres);
     }
 
     @Override
@@ -111,7 +108,7 @@ public class Dancer {
                 "name='" + name + '\'' +
                 ", crewName='" + crewName + '\'' +
                 ", danceLevel=" + danceLevel +
-                ", genre=" + genre +
+                ", genres=" + genres +
                 '}';
     }
 }

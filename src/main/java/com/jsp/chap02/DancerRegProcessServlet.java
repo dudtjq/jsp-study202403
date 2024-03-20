@@ -65,7 +65,7 @@ public class DancerRegProcessServlet  extends HttpServlet {
                     , dancer.getName(), dancer.getCrewName(),
                     dancer.getDanceLevel().getLevelDescription(),
                     dancer.getDanceLevel().getPayPerEvent(),
-                    dancer.getGenre()));
+                    dancer.getGenres()));
         }
 
         w.write("</ul>");
